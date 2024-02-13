@@ -15,22 +15,22 @@ Go to trial URL provided in your email. Click on the tile of the use case you wa
 
 #### DATA DISTRIBUTION WITH DATAFLOW
 - Click _**DATA DISTRIBUTION WITH DATAFLOW**_ tile for Data Distribution with Cloudera DataFlow
-  ![data_distribution_with_dataflow.png](trials/images/data_distribution_with_dataflow.png)
+  ![data_distribution_with_dataflow.png](images/data_distribution_with_dataflow.png)
 - Click _**Try Data Distribution with DataFlow**_ button
-  ![try_data_distribution_with_df.png](trials/images/try_data_distribution_with_df.png)
+  ![try_data_distribution_with_df.png](images/try_data_distribution_with_df.png)
 
 #### ALL-IN-ONE OPEN DATA LAKE HOUSE
 - Click _**ALL-IN-ONE OPEN DATA LAKE HOUSE**_ tile for Open Data Lakehouse pattern
-  ![open_data_lake_house.png](trials/images/open_data_lake_house.png)
+  ![open_data_lake_house.png](images/open_data_lake_house.png)
 - Click _**Try All In One Data Lakehouse**_ button
-  ![try_allinone_data_lakehouse.png](trials/images/try_allinone_data_lakehouse.png)
+  ![try_allinone_data_lakehouse.png](images/try_allinone_data_lakehouse.png)
 
 
 If you are already registered with Cloudera, use your email to login, else Register your email by clicking **Register Now**
 
 Note : Your email will already be added to the include list of Trials by your point of contact at Cloudera, if not, please reach out to your point of contact or send an email to cdptrial@cloudera.com. You will not be able to use Trials if your email or your organization's domain is not in the include list of Trials. You will still need to register with Cloudera verifying your email.
 
-![Screenshot20230601at125303PM.png](trials/images/Screenshot20230601at125303PM.png)
+![Screenshot20230601at125303PM.png](images/Screenshot20230601at125303PM.png)
 
 Once you login, you will be taken to your Trial home page.
 - Click **Manage Trial** in the upper right corner to manage your Trial
@@ -40,10 +40,10 @@ Once you login, you will be taken to your Trial home page.
   - Click **Configurations** for any Trial specific configurations that you may need through your course of Trials
 - Click **Read GitHub Tutorial** to go to Tutorials to use different features of CDP with regard to your use case. Note: It is helpful to open the Github link in a new tab or new window to keep the Trial home page open.
 
- ![manage_trial_github.png](trials/images/manage_trial_github.png)
+ ![manage_trial_github.png](images/manage_trial_github.png)
 
 - Click **Start Trial** to go to CDP Public Cloud home page (Note the Trial Header on top).
 
-  ![start_trial_df.png](trials/images/start_trial_df.png)
+  ![start_trial_df.png](images/start_trial_df.png)
 
 Services specific to your pattern will be available in the Trial. Try CDP and reach out to us at cdptrial@cloudera.com for any questions!
