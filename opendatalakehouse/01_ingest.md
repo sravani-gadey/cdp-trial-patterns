@@ -2,7 +2,7 @@
 
 As part of the `Ingest` phase, we will ingest data from an S3 Bucket into Impala Tables using Hue.
 
-In a pattern that we will release shortly, we will use Cloudera Data Flow (CDF) to ingest data from numerous other sources. 
+In Streaming Data Distribution pattern, we will use Cloudera Data Flow (CDF) to ingest data from numerous other sources. 
 
 The primary goal of this is to build an ingestion data pipeline.
 
@@ -21,21 +21,18 @@ The primary goal of this is to build an ingestion data pipeline.
 - In this lab, we will first create a **raw layer** in our Data Lakehouse. This raw layer will be created by leveraging CSV data that has already been stored in our Public Cloud storage, in this lab we will use S3, for the 5 tables mentioned above
 - This lab is meant to show how quickly you can take raw data and enable the ability to execute SQL queries against that data
 
-1. In your CDP Home Page, click on **Data Hub Clusters**. (For more information about Data Hub, here is a [product tour](https://www.cloudera.com/products/data-hub/cdp-tour-data-hub.html))
+1. In your CDP Home Page, click on **Data Warehouse**. (For more information about Data Warehouse, here is a [product tour](https://docs.cloudera.com/data-warehouse/cloud/index.html))
 
-   ![Screen_Shot_2023_04_23_at_2_27_29_PM.png](images/Screen_Shot_2023_04_23_at_2_27_29_PM.png)
+   ![Screenshot 2024-09-18_at_1.11.47_PM.png](images/Screenshot 2024-09-18_at_1.11.47_PM.png)
 
-2. On the Data Hub Clusters landing page - 
+2. On the Data Warehouse landing page
 
-   a. Note the **Environment Name** as it will be used as one of the inputs while we create tables
+   a. Note the **Environment Name** (circled in below screenshot) as it will be used as one of the inputs while we create tables
    
-   b. Click on the Data Hub called `dwarehouse`.
 
-   ![Screenshot_2023_05_31_at_5_13_05_PM.png](images/Screenshot_2023_05_31_at_5_13_05_PM.png)
+3. Click on **Hue** to open a new browser tab for the Impala query user interface in Hue.
 
-3. In the list of Services in the Data Hub, click on **Hue** to open a new browser tab for the Impala query user interface in Hue.
-
-   ![Screenshot_2023_05_31_at_5_13_36_PM.png](images/Screenshot_2023_05_31_at_5_13_36_PM.png)
+   ![Screenshot 2024-09-10_at_11.02.05_AM.png](images/Screenshot 2024-09-10_at_11.02.05_AM.png)
 
 4.  Create a database for the ***raw layer*** by entering the query below into the Hue Impala editor. This database will be called `<prefix>_airlines_raw`, replacing `<prefix>` with your unique prefix.
 
