@@ -2,7 +2,7 @@
 
 As part of the `Ingest` phase, we will ingest data from an S3 Bucket into Impala Tables using Hue.
 
-In a pattern that we will release shortly, we will use Cloudera Data Flow (CDF) to ingest data from numerous other sources. 
+In Streaming Data Distribution pattern, we will use Cloudera Data Flow (CDF) to ingest data from numerous other sources. 
 
 The primary goal of this is to build an ingestion data pipeline.
 
@@ -21,21 +21,18 @@ The primary goal of this is to build an ingestion data pipeline.
 - In this lab, we will first create a **raw layer** in our Data Lakehouse. This raw layer will be created by leveraging CSV data that has already been stored in our Public Cloud storage, in this lab we will use S3, for the 5 tables mentioned above
 - This lab is meant to show how quickly you can take raw data and enable the ability to execute SQL queries against that data
 
-1. In your CDP Home Page, click on **Data Hub Clusters**. (For more information about Data Hub, here is a [product tour](https://www.cloudera.com/products/data-hub/cdp-tour-data-hub.html))
+1. In your CDP Home Page, click on **Data Warehouse**. (For more information about Data Warehouse, here is a [product tour](https://docs.cloudera.com/data-warehouse/cloud/index.html))
 
-   ![Screen_Shot_2023_04_23_at_2_27_29_PM.png](images/Screen_Shot_2023_04_23_at_2_27_29_PM.png)
+   ![Screenshot 2024-09-18_at_1.11.47_PM.png](images/Screenshot 2024-09-18_at_1.11.47_PM.png)
 
-2. On the Data Hub Clusters landing page - 
+2. On the Data Warehouse landing page
 
-   a. Note the **Environment Name** as it will be used as one of the inputs while we create tables
+   a. Note the **Environment Name** (circled in below screenshot) as it will be used as one of the inputs while we create tables
    
-   b. Click on the Data Hub called `dwarehouse`.
 
-   ![Screenshot_2023_05_31_at_5_13_05_PM.png](images/Screenshot_2023_05_31_at_5_13_05_PM.png)
+3. Click on **Hue** to open a new browser tab for the Impala query user interface in Hue.
 
-3. In the list of Services in the Data Hub, click on **Hue** to open a new browser tab for the Impala query user interface in Hue.
-
-   ![Screenshot_2023_05_31_at_5_13_36_PM.png](images/Screenshot_2023_05_31_at_5_13_36_PM.png)
+   ![Screenshot 2024-09-10_at_11.02.05_AM.png](images/Screenshot 2024-09-10_at_11.02.05_AM.png)
 
 4.  Create a database for the ***raw layer*** by entering the query below into the Hue Impala editor. This database will be called `<prefix>_airlines_raw`, replacing `<prefix>` with your unique prefix.
 
@@ -153,7 +150,7 @@ The primary goal of this is to build an ingestion data pipeline.
 
    - In the screenshot below, there are a few things to pay attention to which are the Location, Table Type, Metadata Location fields and values.
 
-   ![Describe Formatted Airports Iceberg Table](/images/airports_iceberg_describe_formatted.png)
+   ![Describe Formatted Airports Iceberg Table](images/airports_iceberg_describe_formatted.png)
 
    d. Query the newly created `airports` table by executing the query below
 
@@ -161,7 +158,7 @@ The primary goal of this is to build an ingestion data pipeline.
    SELECT * FROM ${prefix}_airlines.airports LIMIT 10;
    ```
 
-   ![Query Airports](/images/query.airlines.airports.png)
+   ![Query Airports](images/query.airlines.airports.png)
 
 3. Execute the following below queries to create the `airlines` table in an Iceberg table format by using the **CREATE TABLE, STORED AS ICEBERG** syntax
 
@@ -245,7 +242,7 @@ The primary goal of this is to build an ingestion data pipeline.
    SHOW CREATE TABLE ${prefix}_airlines.flights;
    ```
 
-   ![Show Create Table flights](/images/show_create_table_flights.png)
+   ![Show Create Table flights](images/show_create_table_flights.png)
 
    - Scroll to the right within the result to find the `PARTITIONED BY` clause
 
@@ -268,7 +265,7 @@ The primary goal of this is to build an ingestion data pipeline.
    ORDER BY year desc;
    ```
 
-   ![Query Flights](/images/query.airlines.flights.png)
+   ![Query Flights](images/query.airlines.flights.png)
 
    - Notice that flight volume has grown quite a bit since 1995, and from 2004 to 2006 data volume has been in the 7 million or so range
 
@@ -299,7 +296,7 @@ The primary goal of this is to build an ingestion data pipeline.
       DESCRIBE FORMATTED ${prefix}_airlines.planes_hive;
       ```
 
-      ![Describe Planes Hive Table](/images/query.describe.planes_hive.png)
+      ![Describe Planes Hive Table](images/query.describe.planes_hive.png)
 
       c. Migrate the `planes_hive` table from the Hive table format to the Iceberg table format using **CREATE TABLE AS SELECT, STORED AS ICEBERG*** syntax
 
@@ -318,6 +315,6 @@ The primary goal of this is to build an ingestion data pipeline.
       DESCRIBE FORMATTED ${prefix}_airlines.planes;
       ```
       
-      ![Describe Planes Iceberg Table](/images/query.describe.planes.png)
+      ![Describe Planes Iceberg Table](images/query.describe.planes.png)
 
-We are now ready to [Analyze](02_analyze.md), [Visualize](03_visualize.md), and [Predict](04_predict.md) Data!
+We are now ready to [Analyze](02_analyze.md) and [Predict](03_predict.md) Data!
