@@ -11,13 +11,11 @@ The primary goal of this project we deployed is to build a gradient-boosted \(XG
 
 ## Lab 1 - Explore Machine Learning AMP Project
 
-1. Open CML `Canceled Flight Prediction` project Overview page
-
-    - If you just completed the [03_visualize](03_visualize.md#03_visualize) phase, in the left nav click on Overview.
+1. Open CML `Canceled Flight Prediction` project Overview page in the left nav click on Overview.
 
     ![CML_Overview_left_nav.png](images/CML_Overview_left_nav.png)
 
-    - If not, you can always go back to the CDP Home Page by clicking the bento menu icon in the top left corner, clicking on Home, selecting the `Machine Learning` tile, clicking on the Workspace available on your Machine Learning page (found under the `Workspace` column), find and select the `Canceled Flight Prediction` project tile.
+    - If you not able to find it , you can always go back to the CDP Home Page by clicking the bento menu icon in the top left corner, clicking on Home, selecting the `Machine Learning` tile, clicking on the Workspace available on your Machine Learning page (found under the `Workspace` column), find and select the `Canceled Flight Prediction` project tile.
    
     ![Screen_Shot_2023_04_24_at_11_33_56_PM.png](images/Screen_Shot_2023_04_24_at_11_33_56_PM.png)
 
