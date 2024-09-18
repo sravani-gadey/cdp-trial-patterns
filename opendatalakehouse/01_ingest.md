@@ -150,7 +150,7 @@ The primary goal of this is to build an ingestion data pipeline.
 
    - In the screenshot below, there are a few things to pay attention to which are the Location, Table Type, Metadata Location fields and values.
 
-   ![Describe Formatted Airports Iceberg Table](/images/airports_iceberg_describe_formatted.png)
+   ![Describe Formatted Airports Iceberg Table](images/airports_iceberg_describe_formatted.png)
 
    d. Query the newly created `airports` table by executing the query below
 
@@ -158,7 +158,7 @@ The primary goal of this is to build an ingestion data pipeline.
    SELECT * FROM ${prefix}_airlines.airports LIMIT 10;
    ```
 
-   ![Query Airports](/images/query.airlines.airports.png)
+   ![Query Airports](images/query.airlines.airports.png)
 
 3. Execute the following below queries to create the `airlines` table in an Iceberg table format by using the **CREATE TABLE, STORED AS ICEBERG** syntax
 
@@ -242,7 +242,7 @@ The primary goal of this is to build an ingestion data pipeline.
    SHOW CREATE TABLE ${prefix}_airlines.flights;
    ```
 
-   ![Show Create Table flights](/images/show_create_table_flights.png)
+   ![Show Create Table flights](images/show_create_table_flights.png)
 
    - Scroll to the right within the result to find the `PARTITIONED BY` clause
 
@@ -265,7 +265,7 @@ The primary goal of this is to build an ingestion data pipeline.
    ORDER BY year desc;
    ```
 
-   ![Query Flights](/images/query.airlines.flights.png)
+   ![Query Flights](images/query.airlines.flights.png)
 
    - Notice that flight volume has grown quite a bit since 1995, and from 2004 to 2006 data volume has been in the 7 million or so range
 
@@ -296,7 +296,7 @@ The primary goal of this is to build an ingestion data pipeline.
       DESCRIBE FORMATTED ${prefix}_airlines.planes_hive;
       ```
 
-      ![Describe Planes Hive Table](/images/query.describe.planes_hive.png)
+      ![Describe Planes Hive Table](images/query.describe.planes_hive.png)
 
       c. Migrate the `planes_hive` table from the Hive table format to the Iceberg table format using **CREATE TABLE AS SELECT, STORED AS ICEBERG*** syntax
 
@@ -315,6 +315,6 @@ The primary goal of this is to build an ingestion data pipeline.
       DESCRIBE FORMATTED ${prefix}_airlines.planes;
       ```
       
-      ![Describe Planes Iceberg Table](/images/query.describe.planes.png)
+      ![Describe Planes Iceberg Table](images/query.describe.planes.png)
 
 We are now ready to [Analyze](02_analyze.md), [Visualize](03_visualize.md), and [Predict](04_predict.md) Data!
