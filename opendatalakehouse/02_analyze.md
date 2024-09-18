@@ -48,7 +48,7 @@ ORDER BY
    avg_departure_delay DESC;
 ```
 
-![Routes with Highest Flight Delays](/images/analyze.query.delayed.flights.png)
+![Routes with Highest Flight Delays](images/analyze.query.delayed.flights.png)
 
 **Query 2:** Which Carriers (airlines) have the highest percentage of cancelled flights?
 
@@ -63,7 +63,7 @@ GROUP BY
 ORDER BY
    pct_cancelled_flights DESC;
 ```
-![Airlines with Cancelled Flights](/images/analyze.query.cancelled.flights.png)
+![Airlines with Cancelled Flights](images/analyze.query.cancelled.flights.png)
 
 **Query 3:** Passengers on International flights with long layovers by Carrier?
 - International flights: flights where the destination airport country is not the same as the origin airport country
@@ -105,7 +105,7 @@ GROUP BY
 ORDER BY
    COUNT(*) DESC;
 ```
-![Flights with Long Layovers](/images/analyze.query.long.layovers.png)
+![Flights with Long Layovers](images/analyze.query.long.layovers.png)
 
 Now that we know we can answer many burning business questions with this data, we need to get the analytic power into the hands of our Business Users.  Since they are not as familiar with writing complex SQL, we need to give them visualizations of the data so they can discover insights from the data.
 
