@@ -23,7 +23,7 @@ The primary goal of this is to build an ingestion data pipeline.
 
 1. In your CDP Home Page, click on **Data Warehouse**. (For more information about Data Warehouse, here is a [product tour](https://docs.cloudera.com/data-warehouse/cloud/index.html))
 
-   ![Screenshot 2024-09-18_at_1.11.47_PM.png](images/Screenshot 2024-09-18_at_1.11.47_PM.png)
+   ![Datawarehouse](images/CDP_DATA_WAREHOUSE.png)
 
 2. On the Data Warehouse landing page
 
@@ -32,7 +32,7 @@ The primary goal of this is to build an ingestion data pipeline.
 
 3. Click on **Hue** to open a new browser tab for the Impala query user interface in Hue.
 
-   ![Screenshot 2024-09-10_at_11.02.05_AM.png](images/Screenshot 2024-09-10_at_11.02.05_AM.png)
+   ![CDW Home Page](images/DWH_HOME_PAGE.png)
 
 4.  Create a database for the ***raw layer*** by entering the query below into the Hue Impala editor. This database will be called `<prefix>_airlines_raw`, replacing `<prefix>` with your unique prefix.
 
