@@ -9,7 +9,7 @@ As part of the `Analyze` phase, we will run an interactive analysis of the data 
 ## Lab 1: Explore the Ingested Data
 
 1. We will continue to analyze the data using Hue.
-2. In the left pane, you will see a catalog of all the `databases` available. Click on `<prefix>_airlines`, where `<prefix>` is the prefix you used in the **01_ingest phase**
+2. In the left pane, you will see a catalog of all the `databases` available. Click on `<prefix>_airlines`, where `<prefix>` is the prefix you used in the [ingest phase](01_ingest.md#lab-2-create-an-open-data-lakehouse-powered-by-apache-iceberg)
 3. In the left pane, you will now see a list of all the `tables` ingested through your ETL/ELT pipeline in the [ingest phase](01_ingest.md#lab-2-create-an-open-data-lakehouse-powered-by-apache-iceberg)
 4. You can now click on the table name to explore the schema of the table and run any sample queries to explore the dataset
 
@@ -25,7 +25,7 @@ You can run the below queries on the interactive query editor.
 
 ![Screenshot20230601at72516AM.png](images/Screenshot20230601at72516AM.png)
 
-- The Data Lakehouse that was created in the 01_ingest phase can answer many different questions to solve business problems, such as:
+- The Data Lakehouse that was created in the [ingest phase](01_ingest.md#lab-2-create-an-open-data-lakehouse-powered-by-apache-iceberg) phase can answer many different questions to solve business problems, such as:
      1. Which Routes (origin airport to destination airport) have the highest average flight delays?  This can be used to assist in determining which Routes to concentrate resources to decrease the chance of delay.
      2. Which Carriers (airlines) have the highest percentage of cancelled flights?  This can be used to see if certain Carriers are outside the normal cancellation percentage and if so this information can help determine which Carrier to fly or not fly.
      3. Which Carriers should we partner with to offer coupons to Passengers on International flights with long layovers in order to help drive additional purchases at our Duty-Free stores?
