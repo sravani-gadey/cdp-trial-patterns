@@ -19,10 +19,13 @@ In this phase, we will be deploying an end\-to\-end machine learning project tha
     
         > Note: If you are not already at the CDP Home Page, click the bento menu icon in the top left corner, then click on `Home`
         
-    - From the Machine Learning home page, click on the available Workspace (found under the `Workspace` column).
- 
-    ![Screen_Shot_2023_04_24_at_11_42_33_PM.png](images/Screen_Shot_2023_04_24_at_11_42_33_PM.png)
-    ![Screen_Shot_2023_04_24_at_11_37_42_PM.png](images/Screen_Shot_2023_04_24_at_11_37_42_PM.png)
+        ![Screen_Shot_2023_04_24_at_11_42_33_PM.png](images/Screen_Shot_2023_04_24_at_11_42_33_PM.png)
+    
+    - From the Machine Learning home page, click on the available Workspace (found under the `Workspace` column). 
+
+    - Make note of the `Workspace/Environment` value listed as you will need to enter this value later on
+
+        ![Screen_Shot_2023_04_24_at_11_37_42_PM.png](images/Screen_Shot_2023_04_24_at_11_37_42_PM.png)
 
 2. Click `AMPs` in the left menu
 
@@ -47,7 +50,7 @@ In this phase, we will be deploying an end\-to\-end machine learning project tha
     Fill out the form as noted below:
 
     - **STORAGE_MODE:** `local`
-    - **SPARK_CONNECTION_NAME:** `<use the Environment Name we collected above>`
+    - **SPARK_CONNECTION_NAME:** `<use the Workspace/Environment value we captured earlier>`
     - **DW_DATABASE:** `<prefix>_airlines` (e.g. prefix = evolve)
     - **DW_TABLE:** `flights`
     - **USE_PREBUILT_MODEL:** `no`
