@@ -1,8 +1,8 @@
 # 03_predict
 
-As part of the `Predict` phase, we will explore and test the end\-to\-end machine learning project we created in [03_visualize - Lab 1](03_visualize.md#lab-1-deploy-machine-leaning-applied-machine-learning-prototype-amp) using Cloudera Machine Learning (CML).
+As part of the `Predict` phase, we will explore and test the end\-to\-end Applied Machine Learning Prototype (AMP) project we created in the [Prerequisites Lab](00_prereqs.md) using Cloudera Machine Learning (CML).
 
-The primary goal of this project we deployed is to build a gradient-boosted \(XGBoost\) classification model to predict the likelihood of a flight being canceled based on years of historical records. To achieve that goal, this project demonstrates the end\-to\-end Machine Learning journey for model training and inference using Spark on CML. Additionally, this project deploys a hosted model and front\-end application to allow users to interact with the trained model.
+The primary goal of the project we deployed is to build a gradient-boosted \(XGBoost\) classification model to predict the likelihood of a flight being canceled based on years of historical records. To achieve that goal, this project demonstrates the end\-to\-end Machine Learning journey for model training and inference using Spark on CML. Additionally, this project deploys a hosted model and front\-end application to allow users to interact with the trained model.
 
 ## Prerequisites
 
@@ -11,11 +11,11 @@ The primary goal of this project we deployed is to build a gradient-boosted \(XG
 
 ## Lab 1 - Explore Machine Learning AMP Project
 
-1. Open CML `Canceled Flight Prediction` project Overview page in the left nav click on Overview.
+1. In your CML workspace, within the **Canceled Flight Prediction** project, click `Overview` in the left navigation menu.
 
     ![CML_Overview_left_nav.png](images/CML_Overview_left_nav.png)
 
-    - If you not able to find it , you can always go back to the CDP Home Page by clicking the bento menu icon in the top left corner, clicking on Home, selecting the `Machine Learning` tile, clicking on the Workspace available on your Machine Learning page (found under the `Workspace` column), find and select the `Canceled Flight Prediction` project tile.
+    - Note: If you are having trouble finding it, you can always go back to the CDP Home Page by clicking the bento menu icon in the top left corner, clicking on Home, selecting the `Machine Learning` tile, clicking on the Workspace available on your Machine Learning page (found under the `Workspace` column), find and select the `Canceled Flight Prediction` project tile.
    
     ![Screen_Shot_2023_04_24_at_11_33_56_PM.png](images/Screen_Shot_2023_04_24_at_11_33_56_PM.png)
 
@@ -27,17 +27,17 @@ The primary goal of this project we deployed is to build a gradient-boosted \(XG
 
     ![CDV_project_click.png](images/CDV_project_click.png)
 
-3. On the Overview page, you can preview the materials that were created as part of deploying the AMP.
+3. On the **Overview** page, you can preview the materials that were created as part of deploying the AMP.
 
     - AMPs are ML projects that provide reference examples to solving common problems in the machine learning field. More than simplified quickstarts or tutorials, AMPs are fully developed expert solutions that demonstrate how to fully use the power of CML. AMPs can be an excellent way to get started as they show you how to solve problems similar to your business use cases.
 
     ![AMP_overview_page.png](images/AMP_overview_page.png)
 
-    - On the initial view into the `Canceled Flight Prediction` AMP Overview page, you will see the status bar which is a recap of what you executed in [03_visualize Lab 2](03_visualize.md#lab-2-configure-and-deploy-canceled-flight-prediction-amp)
+    - On the initial view into the `Canceled Flight Prediction` AMP Overview page, you will see the status bar which is a recap of what you executed in the [Prerequisites Lab](00_prereqs.md)
 
     ![AMP_status_banner.png](images/AMP_status_banner.png)
 
-    As you scroll down the right side of the screen, notice the following AMP component deployments:
+    As you scroll down the page, notice the following AMP component deployments:
 
     - `Models`
 
@@ -141,7 +141,7 @@ It is important to emphasize that there was no requirement to create a duplicate
 4. Provide file name and click `Create`
 
     - **File Name**: `iceberg_query.py`
-    - Check the `Open in Editor` checkbox
+    - **Open in Editor:** `Keep it checked`
     - Click the `Create` button
 
     ![New File Name](images/CML_new_file_name.png)
