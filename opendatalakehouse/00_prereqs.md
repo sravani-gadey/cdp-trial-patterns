@@ -2,66 +2,16 @@
 
 As part of the `Prerequisites`, we will walk through the initial setup and configuration steps needed in your environment before we can proceed with the `Ingest` phase labs, including:
 
-- Set your **Workload Password** for your CDP user
 - Decide on a unique **Prefix** that will identify the databases you will create
 - Deploy a new Machine Learning (ML) project
 - Configure and deploy an Applied Machine Learning Prototype (AMP)
 
 
-## Lab 1: Setup Workload Password for User
-
-1. Set your CDP Workload Password
-
-    a. In your CDP Home Page
-![CDP Home Page](images/CDP_Home.png)
-
-    b. In the bottom left corner, find your user ID and click on it. In the popup, click on `Profile`
-
-    ![Screen_Shot_2023_04_24_at_11_33_56_PM.png](images/Screen_Shot_User_Profile.png)
-
-    c. On the User Profile page, click on `Set Workload Password`
-
-    ![Screen_Shot_Set_Workload_pw.png](images/Screen_Shot_Set_Workload_pw.png)
-
-    d. Enter a strong password, confirm it, and click on `Set Workload Password`
-
-    ![Screen_Shot_Reset_WL_pw.png](images/Screen_Shot_Reset_WL_pw.png)
-
-    - You should see a message that the Workload password has been updated.
-
-    ![Screen_Shot_Reset_WL_success.png](images/Screen_Shot_Reset_WL_success.png)
-
-2. In Cloudera Machine Learning (CML), provide your CDP Workload Password
-
-    a. Open Cloudera Machine Learning (CML)
-
-    - Click the bento menu icon in the top left corner and select `Machine Learning`
-
-    ![Menu_nav2_CML.png](images/Menu_nav2_CML.png)
-
-    b. Note the name of the environment, listed under the `Environment` column, as it will be used as one of the inputs while we create our Machine Learning model.
-
-    c. Click on the workspace name link, found under the `Workspace` column
-
-    ![Screen_Shot_2023_04_24_at_11_37_42_PM.png](images/Screen_Shot_2023_04_24_at_11_37_42_PM.png)
-
-    d. Click on your user ID in the top right corner, and click
-
-    ![Screen_Shot_cml_user_acct_setting.png](images/Screen_Shot_cml_user_acct_setting.png)
-
-    e. On the User Profile page, click on the `Environment Variables` tab
-
-    ![Screen_Shot_CML_User_Settings.png](images/CML_User_Settings.png)
-
-    f. Enter your Workload Password from **Step 2** in `WORKLOAD_PASSWORD` and click `Save`
-
-    ![Screen_Shot_CML_Set_WL_pw.png](images/Screen_Shot_CML_Set_WL_pw.png)
-
 # Cloudera Machine Learning (CML) Project
 
 In this phase, we will be deploying an end\-to\-end machine learning project that will also be used in the [03_predict](03_predict.md) phases.
 
-## Lab 2: Deploy an ML AMP
+## Lab 1: Deploy an ML AMP
 
 1. Open Cloudera Machine Learning (CML)
 
@@ -93,7 +43,7 @@ In this phase, we will be deploying an end\-to\-end machine learning project tha
 
 We have now created a Cloudera Machine Learning (CML) Project that will be populated with all of the content making up the AMP we just deployed. This includes data, code, files, model definition, and a Flask application.
 
-## Lab 3: Configure and Deploy Canceled Flight Prediction AMP
+## Lab 2: Configure and Deploy Canceled Flight Prediction AMP
 
 1. Open the created Cloudera Machine Learning (CML) Project you just created, named "Canceled Flight Prediction - &lt;user-id>" by clicking on the Project tile
 
