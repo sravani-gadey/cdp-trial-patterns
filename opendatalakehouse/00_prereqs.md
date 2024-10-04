@@ -18,8 +18,7 @@ In this phase, we will be deploying an end\-to\-end machine learning project tha
     - If you just completed providing our Workload Password to CML, click on `Home` in the left navigation menu.
 
     - If not, you can always go back to the CDP Home Page by clicking the bento menu icon in the top left corner, click on `Home`, select the `Machine Learning` tile, and click on the available Workspace on the Machine Learning page (found under the `Workspace` column).
-
-    ![Screen_Shot_2023_04_24_at_11_33_56_PM.png](images/Screen_Shot_2023_04_24_at_11_33_56_PM.png)
+ 
     ![Screen_Shot_2023_04_24_at_11_42_33_PM.png](images/Screen_Shot_2023_04_24_at_11_42_33_PM.png)
     ![Screen_Shot_2023_04_24_at_11_37_42_PM.png](images/Screen_Shot_2023_04_24_at_11_37_42_PM.png)
 

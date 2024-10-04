@@ -15,21 +15,18 @@ In this phase:
 
 ## Lab 1: Schema Evolution 
 
-1. In your CDP Home Page, click on **Data Hub Clusters**. (For more information about Data Hub, here is a [product tour](https://www.cloudera.com/products/data-hub/cdp-tour-data-hub.html))
+1. In your CDP Home Page, click on **Data Warehouse**. (For more information about Data Warehouse, here is a [product tour](https://docs.cloudera.com/data-warehouse/cloud/index.html))
 
-   ![Screen_Shot_2023_04_23_at_2_27_29_PM.png](images/Screen_Shot_2023_04_23_at_2_27_29_PM.png)
+   ![Datawarehouse](images/CDP_DATA_WAREHOUSE.png)
 
-2. On the Data Hub Clusters landing page - 
+2. On the Data Warehouse landing page
 
-   a. Note the **Environment Name** as it will be used as one of the inputs while we create tables
+   a. Note the **Environment Name** (circled in below screenshot) as it will be used as one of the inputs while we create tables
    
-   b. Click on the Data Hub called `dwarehouse`.
 
-   ![Screenshot_2023_05_31_at_5_13_05_PM.png](images/Screenshot_2023_05_31_at_5_13_05_PM.png)
+3. Click on **Hue** to open a new browser tab for the Impala query user interface in Hue.
 
-3. In the list of Services in the Data Hub, click on **Hue** to open a new browser tab for the Impala query user interface in Hue.
-
-   ![Screenshot_2023_05_31_at_5_13_36_PM.png](images/Screenshot_2023_05_31_at_5_13_36_PM.png)
+   ![CDW Home Page](images/DWH_HOME_PAGE.png)
 
 4. In the table browser viewer (left side of the screen) navigate to your `<prefix>_airlines` database
 
