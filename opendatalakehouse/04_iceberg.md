@@ -179,21 +179,21 @@ In this phase:
 
    - There are 2 rows returned, each row representing a snapshot. Snapshots are automatically created when data changes occur in a table.
 
-   - The first row is the initial time this table was loaded in [01_ingest Lab 2](01_ingest.md#lab-2-create-an-open-data-lakehouse-powered-by-apache-iceberg-needed-for-analysis-and-prediction) this was data for flights before 2007
+   - The first row is the initial time this table was loaded in [Ingest Lab 2](01_ingest.md#lab-2-create-an-open-data-lakehouse-powered-by-apache-iceberg-needed-for-analysis-and-prediction) this was data for flights before 2007
 
-   - The second row represents the data that was loaded in [Lab 2](05_iceberg.md#lab-2-partition-evolution) after Partition Evolution, which are flights in the year 2007
+   - The second row represents the data that was loaded in [Ingest Lab 2](01_ingest.md#lab-2-create-an-open-data-lakehouse-powered-by-apache-iceberg-needed-for-analysis-and-prediction) after Partition Evolution, which are flights in the year 2007
 
 2. Explore Time Travel using a relative Date Time
 
    - In the `create_ts` prompt box, enter a date that is greater than the 2nd-row `creation_time` column
 
-   ```
-   SELECT year, count(*) 
-   FROM ${user_id}_airlines.flights
-   FOR SYSTEM_TIME AS OF '${create_ts}'
-   GROUP BY year
-   ORDER BY year desc;
-   ```
+      ```
+      SELECT year, count(*) 
+      FROM ${prefix}_airlines.flights
+      FOR SYSTEM_TIME AS OF '${create_ts}'
+      GROUP BY year
+      ORDER BY year desc;
+      ```
 
    - This will return all data through 2007.  This shows that you can use a relative timestamp and Iceberg will choose the closest Snapshot to that date
 
@@ -203,13 +203,13 @@ In this phase:
 
    - In the `snapshot_id` prompt box enter the value in the 1st row `snapshot_id` column
 
-   ```
-   SELECT year, count(*) 
-   FROM ${user_id}_airlines.flights
-   FOR SYSTEM_VERSION AS OF ${snapshot_id}
-   GROUP BY year
-   ORDER BY year desc;
-   ```
+      ```
+      SELECT year, count(*) 
+      FROM ${prefix}_airlines.flights
+      FOR SYSTEM_VERSION AS OF ${snapshot_id}
+      GROUP BY year
+      ORDER BY year desc;
+      ```
 
    - This will return all data through 2006.  For Snapshot
 
@@ -290,6 +290,8 @@ In this phase:
    - Click on the `Advanced` tab
 
    - Under `Environment Variables` change the value for the `STORAGE_MODE` to `external`
+
+   - Click the `Submit` button
 
    ![Environment Variable](images/CML_Change_Environment_Variable.png)
 
