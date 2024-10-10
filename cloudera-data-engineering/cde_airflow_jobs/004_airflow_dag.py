@@ -42,7 +42,6 @@ from datetime import datetime, timedelta, timezone
 from airflow import DAG
 from cloudera.cdp.airflow.operators.cde_operator import CDEJobRunOperator  # Import CDE operator to run CDE Jobs
 from airflow.operators.dummy_operator import DummyOperator  # Import DummyOperator to define start and end tasks
-from airflow.providers.github.operators.github import GithubOperator  # Import GithubOperator for GitHub API interaction
 import logging  # Import logging for logging information in tasks
 
 username = "username" #copy and paste values here from Trial Manager configuration
@@ -98,20 +97,12 @@ gold = CDEJobRunOperator(
     trigger_rule='all_success',  # This task runs only if the previous task succeeded
 )
 
-# Task to list GitHub repositories using the GitHub API
-github_list_repos = GithubOperator(
-    task_id="github_list_repos",  # Unique task ID for this task
-    github_method="get_user",  # Method to get the authenticated GitHub user
-    result_processor=lambda user: logger.info(list(user.get_repos())),  # Process the result to log the user's repositories
-    dag=dag  # Reference to the DAG
-)
-
 # Dummy end task, used as an exit point for the DAG
 end = DummyOperator(
     task_id="end",  # Unique task ID for this task
     dag=dag  # Reference to the DAG
 )
 
-# Task dependencies: Start the DAG -> Run Bronze job -> Run Silver job -> Run Gold job -> List GitHub repos -> End
-start >> bronze >> silver >> gold >> github_list_repos >> end
+# Task dependencies: Start the DAG -> Run Bronze job -> Run Silver job -> Run Gold job -> End
+start >> bronze >> silver >> gold >> end
 

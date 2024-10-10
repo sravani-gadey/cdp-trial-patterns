@@ -40,7 +40,6 @@
 from pyspark.sql import SparkSession
 from config import storageLocation, username
 from pyspark.sql.types import *
-import sys, random, os, json, random, configparser
 from great_expectations.dataset.sparkdf_dataset import SparkDFDataset
 
 spark = SparkSession \
@@ -50,7 +49,6 @@ spark = SparkSession \
 
 
 print("Storage Location from Config File: ", storageLocation)
-print("PySpark Runtime Arg: ", sys.argv[1])
 
 
 #---------------------------------------------------

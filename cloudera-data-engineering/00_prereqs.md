@@ -1,9 +1,7 @@
 # CDE-Prerequisites
 
 ---
-
 ## **Create CDE Resources**
-
 #### Download or Clone the Repository
 
 To get started with the project, download or clone or fork the repository using the following command:
