@@ -13,7 +13,7 @@ In this phase, we will be deploying an end\-to\-end machine learning project tha
 
 ## Lab 1: Configure and Deploy an AMP
 
-1. Open Cloudera Machine Learning (CML)
+1. Open Cloudera AI
 
     - Select the `Machine Learning` tile on the CDP Home page
     
