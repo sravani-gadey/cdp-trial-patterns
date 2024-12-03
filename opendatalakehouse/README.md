@@ -11,8 +11,8 @@ For our tutorial, we will use a raw airlines dataset to -
 0. [Pre-reqs](00_prereqs.md) - Set up CDP user workload password and deploy the Applied Machine Learning Prototype (AMP) for `Canceled Flight Prediction`
 1. [Ingest](01_ingest.md) - Build an ingestion data pipeline to enable advanced analytics and Machine Learning (ML) use cases
 2. [Analyze](02_analyze.md) - Explore the ingested data and conduct an interactive analysis
-3. [Predict](03_predict.md) - Predict the likelihood of a flight being canceled based on historical records
-4. [Do More with Iceberg](04_iceberg.md) - Test Iceberg features such as Time Travel and Partition Evolution, and change the ML Project to train the `Canceled Flight Prediction` model using the Data Lakehouse (Iceberg) data
+3. [Predict](04_predict) - Predict the likelihood of a flight being canceled based on historical records
+4. [Do More with Iceberg](05_iceberg) - Test Iceberg features such as Time Travel and Partition Evolution, and change the ML Project to train the `Canceled Flight Prediction` model using the Data Lakehouse (Iceberg) data
 
 ### Further Exploration
 
