@@ -1,4 +1,4 @@
-mn # 02_analyze
+# 02_analyze
 
 As part of the `Analyze` phase, we will run an interactive analysis of the data we brought in through a data pipeline into Cloudera's Data Lakehouse using Impala.
 
@@ -109,4 +109,4 @@ ORDER BY
 
 Now that we know we can answer many burning business questions with this data, we need to get the analytic power into the hands of our Business Users.  Since they are not as familiar with writing complex SQL, we need to give them visualizations of the data so they can discover insights from the data.
 
-We are now ready to [Predict](04_predict#03_predict) the likelihood of a flight being canceled.
+We are now ready to [Predict](04_predict.md#04_predict) the likelihood of a flight being canceled.
