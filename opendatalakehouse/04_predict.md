@@ -1,4 +1,4 @@
-# 03_predict
+# 04_predict
 
 As part of the `Predict` phase, we will explore and test the end\-to\-end Applied Machine Learning Prototype (AMP) project we created in the [Prerequisites Lab](00_prereqs.md) using Cloudera Machine Learning (CML).
 
