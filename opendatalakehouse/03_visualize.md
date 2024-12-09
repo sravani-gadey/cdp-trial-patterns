@@ -14,7 +14,7 @@
 3. Click on `Connections` and then create a new Connection.
 ![Connection.png](images/CDV_Connection.png) 
 4. On the popped window , Give the connection name as `Embedded-Dataviz` and Select the CDW Warehouse from the dropdown.
-5. Hostname and UserName are auto-populated on selection of CDW warehouse. Click on `Connect`.
+5. Hostname and UserName are auto-populated on selection of CDW warehouse. Click on `Connect`. Password is optional.
 ![Connection_Create.png](images/CDV_Connection_Create.png)
 
 ---
