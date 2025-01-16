@@ -44,7 +44,7 @@ from cloudera.cdp.airflow.operators.cde_operator import CDEJobRunOperator  # Imp
 from airflow.operators.dummy_operator import DummyOperator  # Import DummyOperator to define start and end tasks
 import logging  # Import logging for logging information in tasks
 
-username = "csso_sravani_gadey" #copy and paste values here from Trial Manager configuration
+username = "csso_trialtesting" #copy and paste values here from Trial Manager configuration
 # Set the DAG name dynamically based on the username from the config
 dag_name = "BankFraudHol-" + username
 logger = logging.getLogger(__name__)  # Initialize a logger for this DAG
