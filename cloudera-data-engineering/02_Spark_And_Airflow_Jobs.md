@@ -16,9 +16,9 @@ These features dramatically reduce the amount of effort otherwise required in or
 
 ##### Familiarize Yourself with the Code
 
-The Spark Application scripts and configuration files used in these labs are available at the [CDE Spark Jobs folder in the git repository](https://github.com/cloudera/cdp-trial-patterns/cloudera-data-engineering/cde_spark_jobs). Before moving on to the next step, please familiarize yourself with the code in the "01_Lakehouse_Bronze.py", "002_Lakehouse_Silver.py", "003_Lakehouse_Gold.py", "utils.py" files.
+The Spark Application scripts and configuration files used in these labs are available at the [CDE Spark Jobs folder in the git repository](https://github.com/cloudera/cdp-trial-patterns/tree/main/cloudera-data-engineering/cde_spark_jobs). Before moving on to the next step, please familiarize yourself with the code in the "01_Lakehouse_Bronze.py", "002_Lakehouse_Silver.py", "003_Lakehouse_Gold.py", "utils.py" files.
 
-The Airflow DAG script is available in the [CDE Airflow Jobs folder in the git repository](https://github.com/cloudera/cdp-trial-patterns/cloudera-data-engineering/cde_spark_jobs). Please familiarize yourself with the code in the "airflow_dag.py" script as well.
+The Airflow DAG script is available in the [CDE Airflow Jobs folder in the git repository](https://github.com/cloudera/cdp-trial-patterns/tree/main/cloudera-data-engineering/cde_airflow_jobs). Please familiarize yourself with the code in the "airflow_dag.py" script as well.
 
 * The "001_Lakehouse_Bronze.py" PySpark Application createas Iceberg Customer and Credit Card transactions tables from different file formats. "utils.py" contains a the Python method to transform multiple dataframe columns at once utilized by the "01_Lakehouse_Bronze.py" script.
 
@@ -31,11 +31,6 @@ The Airflow DAG script is available in the [CDE Airflow Jobs folder in the git r
 ---
 
 ## Create CDE Spark Jobs
-
-**Note**: Please replace any periods `(.)` in the username with underscores `(_)`.
-For example, if the username is `csso_trial.user`, change it to `csso_trial_user`.
-If there are no periods in the username, use the same username as shown on the [Trial Manager homepage](https://console.us-west-1.cdp.cloudera.com/trial/#/postRegister?pattern=CDP_DATA_ENGINEERING&trial=cdp_paas)
-
 
 Now that you are familiar with CDE Repositories and Resources you are ready to create your first CDE Spark Job.
 
@@ -101,11 +96,6 @@ CDE embeds Apache Airflow at the CDE Virtual Cluster level. It is automatically 
 
 ##### Create Airflow Job
 
-**Note**: Please replace any periods `(.)` in the username with underscores `(_)`.
-For example, if the username is `csso_trial.user`, change it to `csso_trial_user`.
-If there are no periods in the username, use the same username as shown on the [Trial Manager homepage](https://console.us-west-1.cdp.cloudera.com/trial/#/postRegister?pattern=CDP_DATA_ENGINEERING&trial=cdp_paas)
-
-
 Open the "004_airflow_dag.py" script located in the "cde_airflow_jobs" folder. Familiarize yourself with the code an notice:
 
 * The Python classes needed for the DAG Operators are imported at the top. Notice the CDEJobRunOperator is included to run Spark Jobs in CDE.
@@ -120,6 +110,7 @@ Then navigate to the CDE Jobs UI and create a new CDE Job. Select Airflow as the
 * File: Select from Repository -> "004_airflow_dag.py"
 * Advanced Options - Repositories: CDE_Repo_userxxx e.g. CDE_Repo_user002
 ```
+Finally, save the CDE Job by clicking the **"Create"**  icon.
 
 ![alt text](images/cde_airflow_job_1.png)
 
