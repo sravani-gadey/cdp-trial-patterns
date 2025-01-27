@@ -18,6 +18,9 @@ The primary goal of this is to build an ingestion data pipeline.
 
 ## Lab 1: Ingest Flights Raw Data
 
+**Note: The CDW Virtual Warehouse have been enabled with auto-suspend to save cloud cost. If in case the VW is suspended/stopped, please proceed to run the query via Hue UI, running query should automatically start the Virtual Warehouse. Trial Customers do not have permission to start the Virtual Warehouse.**
+
+
 - In this lab, we will first create a **raw layer** in our Data Lakehouse. This raw layer will be created by leveraging CSV data that has already been stored in our Public Cloud storage, in this lab we will use S3, for the 5 tables mentioned above
 - This lab is meant to show how quickly you can take raw data and enable the ability to execute SQL queries against that data
 
@@ -317,4 +320,4 @@ The primary goal of this is to build an ingestion data pipeline.
       
       ![Describe Planes Iceberg Table](images/query.describe.planes.png)
 
-We are now ready to [Analyze](02_analyze.md) and [Predict](03_predict.md) Data!
+We are now ready to [Analyze](02_analyze.md) and [Predict](04_predict.md) Data!

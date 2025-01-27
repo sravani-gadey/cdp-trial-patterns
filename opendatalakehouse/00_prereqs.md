@@ -9,11 +9,11 @@ As part of the `Prerequisites`, we will walk through the initial setup and confi
 
 # Cloudera Machine Learning (CML) Project
 
-In this phase, we will be deploying an end\-to\-end machine learning project that will also be used in the [03_predict](03_predict.md) phases.
+In this phase, we will be deploying an end\-to\-end machine learning project that will also be used in the [04_predict](04_predict.md) phases.
 
 ## Lab 1: Configure and Deploy an AMP
 
-1. Open Cloudera Machine Learning (CML)
+1. Open Cloudera AI
 
     - Select the `Machine Learning` tile on the CDP Home page
     
