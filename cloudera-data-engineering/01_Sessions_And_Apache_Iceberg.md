@@ -20,7 +20,7 @@ and launch a CDE PySpark Session.
 
 ![alt text](images/cde_home_page.png)
 
-Leave default settings intact.
+Keep the default settings as they are. Use `-` instead of `_ `in the username for better readability. If there's a word limit, consider creating a session with your username for easy recognition.
 
 ![alt text](images/cde_session_1.png)
 
@@ -39,7 +39,7 @@ you can find your assigned storage location and username from [Trial Manager hom
 ![alt text](images/cde_trial_home_page.png)
 
 
-please copy paste the values from trial configuration.
+please copy and paste the values from trial configuration.
 
 
 ![alt text](images/trial_manager_configuration.png)
@@ -197,21 +197,10 @@ distanceDf.filter(distanceDf.trx_dist_from_home > 100).show()
 
 #### Iceberg Merge Into
 
-**Note**: Please replace any periods `(.)` in the username with underscores `(_)`. 
-For example, if the username is `csso_trial.user`, change it to `csso_trial_user`. 
-If there are no periods in the username, use the same username as shown on the [Trial Manager homepage](https://console.us-west-1.cdp.cloudera.com/trial/#/postRegister?pattern=CDP_DATA_ENGINEERING&trial=cdp_paas)
-
-Create Transactions Iceberg table:
-
 ```
-#please copy the same username if there is no change in username
-username_for_db = "<please check the above note and replace the username>"
-```
-Please verify the username, as Iceberg database naming conventions do not allow the use of a period (.) in names.
-```
-spark.sql("CREATE DATABASE IF NOT EXISTS SPARK_CATALOG.HOL_DB_{}".format(username_for_db))
+spark.sql("CREATE DATABASE IF NOT EXISTS SPARK_CATALOG.HOL_DB_{}".format(username))
 
-transactionsDf.writeTo("SPARK_CATALOG.HOL_DB_{0}.TRANSACTIONS_{0}".format(username_for_db)).using("iceberg").tableProperty("write.format.default", "parquet").createOrReplace()
+transactionsDf.writeTo("SPARK_CATALOG.HOL_DB_{0}.TRANSACTIONS_{0}".format(username)).using("iceberg").tableProperty("write.format.default", "parquet").createOrReplace()
 ```
 
 Load New Batch of Transactions in Temp View:
@@ -221,17 +210,20 @@ trxBatchDf = spark.read.schema("credit_card_number string, credit_card_provider 
 trxBatchDf.createOrReplaceTempView("trx_batch")
 ```
 
-Sample Merge Into Syntax:
+**Sample Merge Into Syntax:**
 
-```
-MERGE INTO prod.db.target t   -- a target table
-USING (SELECT ...) s          -- the source updates
-ON t.id = s.id                -- condition to find updates for target rows
-WHEN MATCHED AND s.op = 'delete' THEN DELETE -- updates
-WHEN MATCHED AND t.count IS NULL AND s.op = 'increment' THEN UPDATE SET t.count = 0
-WHEN MATCHED AND s.op = 'increment' THEN UPDATE SET t.count = t.count + 1
-WHEN NOT MATCHED THEN INSERT *
-```
+Let's break down sample merge for better understanding 
+* MERGE INTO **prod.db.target t**   -->  a target table
+* USING (**SELECT ...) s**          -->  the source updates
+* ON **t.id = s.id**                --> condition to find updates for target rows
+* **WHEN MATCHED AND s.op = 'delete' THEN DELETE** --> updates
+
+**Few More updates for better understanding**
+
+* WHEN MATCHED AND t.count IS NULL AND s.op = 'increment' THEN UPDATE SET t.count = 0
+* WHEN MATCHED AND s.op = 'increment' THEN UPDATE SET t.count = t.count + 1
+* WHEN NOT MATCHED THEN INSERT *;
+
 
 Run MERGE INTO in order to load new batch into Transactions table:
 
@@ -239,17 +231,17 @@ Spark SQL Command:
 
 ```
 # PRE-MERGE COUNTS BY TRANSACTION TYPE:
-spark.sql("""SELECT TRANSACTION_TYPE, COUNT(*) FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0} GROUP BY TRANSACTION_TYPE""".format(username_for_db)).show()
+spark.sql("""SELECT TRANSACTION_TYPE, COUNT(*) FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0} GROUP BY TRANSACTION_TYPE""".format(username)).show()
 
 # MERGE OPERATION
 spark.sql("""MERGE INTO spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0} t   
 USING (SELECT * FROM trx_batch) s          
 ON t.credit_card_number = s.credit_card_number               
 WHEN MATCHED AND t.transaction_amount < 1000 AND t.transaction_currency != "CHF" THEN UPDATE SET t.transaction_type = "invalid"
-WHEN NOT MATCHED THEN INSERT *""".format(username_for_db))
+WHEN NOT MATCHED THEN INSERT *""".format(username))
 
 # POST-MERGE COUNT:
-spark.sql("""SELECT TRANSACTION_TYPE, COUNT(*) FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0} GROUP BY TRANSACTION_TYPE""".format(username_for_db)).show()
+spark.sql("""SELECT TRANSACTION_TYPE, COUNT(*) FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0} GROUP BY TRANSACTION_TYPE""".format(username)).show()
 ```
 
 #### Iceberg Time Travel / Incremental Read
@@ -258,17 +250,17 @@ Now that you added data to the transactions table you can perform Iceberg Time T
 
 ```
 # ICEBERG TABLE HISTORY (SHOWS EACH SNAPSHOT AND TIMESTAMP)
-spark.sql("SELECT * FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}.history".format(username_for_db)).show()
+spark.sql("SELECT * FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}.history".format(username)).show()
 
 # ICEBERG TABLE SNAPSHOTS (USEFUL FOR INCREMENTAL QUERIES AND TIME TRAVEL)
-spark.sql("SELECT * FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}.snapshots".format(username_for_db)).show()
+spark.sql("SELECT * FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}.snapshots".format(username)).show()
 
 # APPEND SECOND DATA BATCH
 trxBatchDf = spark.read.schema("credit_card_number string, credit_card_provider string, event_ts timestamp, latitude double, longitude double, transaction_amount long, transaction_currency string, transaction_type string").json("{0}/transactions/{1}/trx_batch_2".format(storageLocation, username))
-trxBatchDf.writeTo("spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}".format(username_for_db)).using("iceberg").append()
+trxBatchDf.writeTo("spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}".format(username)).using("iceberg").append()
 
 # STORE FIRST AND LAST SNAPSHOT ID'S FROM SNAPSHOTS TABLE
-snapshots_df = spark.sql("SELECT * FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}.snapshots;".format(username_for_db))
+snapshots_df = spark.sql("SELECT * FROM spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}.snapshots;".format(username))
 ```
 
 ```
@@ -279,7 +271,7 @@ incReadDf = spark.read\
     .format("iceberg")\
     .option("start-snapshot-id", second_snapshot)\
     .option("end-snapshot-id", last_snapshot)\
-    .load("spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}".format(username_for_db))
+    .load("spark_catalog.HOL_DB_{0}.TRANSACTIONS_{0}".format(username))
 
 print("Incremental Report:")
 incReadDf.show()
